@@ -32,7 +32,6 @@ class Auth{
 
 
     /**
-     * Doit etret appelé apres un appel  a restrict
      * @return L'utilisateur courant dans la session
      */
     public function getCurrentUser(){
@@ -54,55 +53,15 @@ class Auth{
      * @param $db
      * @param $fname
      * @param $lname
-     * @param $gender
      * @param $email
-     * @param $phone
-     * @param $city
-     * @param $birth
      * @param $password_user
      * @return mixed l'id de l'utilisateur créé
      */
-    public function registerUser($db, $fname, $lname, $birth ,$gender ,$email, $phone, $city, $password_user, $picture, $id_fb){
+    public function registerUser($db, $email, $fname, $lname, $password_user, $pseudo){
 
-        $smsCode = Str::randomSMSToken(4);
         $password = $this->hashPass($password_user);
-        if($picture == NULL){
-          $token = Str::random(60);
-          $confirm_date = NULL;
-          $profilePic = ($gender == 0)?'avatar_male.png':'avatar_female.png' ;
-        }else{
-          $profilePic = $picture;
-          $token = NULL;
-          $datecount = new DateTime();
-          $confirm_date = $datecount->format("Y-m-d");
-        }
 
-
-        $db->query('INSERT INTO user SET fname = ?, lname = ?, city_user = ?, mail_user = ?, phone_user = ?, birth = ?, gender = ?, lvl_foot = ?, lvl_tennis = ?, lvl_padel = ?, lvl_squash = ?, password_user = ?, valid_phone = ?, gameplayed = ?, lates = ?, misses = ?, profil_pic = ?, ban_pic = ?, int_foot = ?, int_tennis = ?, int_padel = ?, int_squash = ?, confirmedat_user = NOW(), id_fb = ?', [
-            $fname,
-            $lname,
-            $city,
-            $email,
-            $phone,
-            $birth,
-            0,
-            1,
-            1,
-            1,
-            1,
-            $password,
-            $smsCode,
-            0,
-            0,
-            0,
-            $profilePic,
-            0,
-            1,
-            1,
-            1,
-            1,
-            $id_fb
-        ]);
+        $db->query('INSERT INTO  SET ', []);
         return $db->lastInsertId();
     }
 
@@ -133,7 +92,6 @@ class Auth{
      * Deconnect l'utilisateur courant
      */
     public function logout($db){
-	    $this->deleteCookie($db);
 	    $this->session->logout('auth');
         header("Location: ../index.php");
         exit();
