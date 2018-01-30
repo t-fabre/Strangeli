@@ -13,12 +13,12 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FreeHTML5.co" />
 
-  <!-- 
+  <!--
 	//////////////////////////////////////////////////////
 
-	FREE HTML5 TEMPLATE 
+	FREE HTML5 TEMPLATE
 	DESIGNED & DEVELOPED by FreeHTML5.co
-		
+
 	Website: 		http://freehtml5.co/
 	Email: 			info@freehtml5.co
 	Twitter: 		http://twitter.com/fh5co
@@ -42,7 +42,7 @@
 	<link rel="shortcut icon" href="favicon.ico">
 	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 	<!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -53,6 +53,7 @@
 	<link rel="stylesheet" href="css/flexslider.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/modal.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
@@ -63,8 +64,8 @@
 
 	</head>
 	<body>
-	
-	
+
+
 	<div id="fh5co-page">
 	<header id="fh5co-header" role="banner">
 		<div class="container">
@@ -95,7 +96,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 
 	<div class="fh5co-contact animate-box">
 		<div class="container">
@@ -134,13 +135,13 @@
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 
 	<div id="map" class="animate-box" data-animate-effect="fadeIn"></div>
 
 	<footer id="fh5co-footer" role="contentinfo">
-	
+
 		<div class="container">
 			<div class="col-md-3 col-sm-12 col-sm-push-0 col-xs-12 col-xs-push-0">
 				<h3>About Us</h3>
@@ -173,17 +174,17 @@
 					<li><a href="#"><i class="icon-instagram"></i></a></li>
 				</ul>
 			</div>
-			
-			
+
+
 			<div class="col-md-12 fh5co-copyright text-center">
-				<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>	
+				<p>&copy; 2016 Free HTML5 template. All Rights Reserved. <span>Designed with <i class="icon-heart"></i> by <a href="http://freehtml5.co/" target="_blank">FreeHTML5.co</a> Demo Images by <a href="http://unsplash.com/" target="_blank">Unsplash</a></span></p>
 			</div>
-			
+
 		</div>
 	</footer>
 	</div>
-	
-	
+	<div id="modalTest1"></div>
+
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -202,6 +203,17 @@
 	<!-- MAIN JS -->
 	<script src="js/main.js"></script>
 
+	<!-- MODAL -->
+	<script src="js/modal.js"></script>
+
+	<script>
+		var modaltest = new modal(
+			"modalTest1",
+			"notification",
+			{titre:["modal","notification"], message:"test modal", button:[["Oui", "yes-btn", "modaltest.hide()"],["Non", "no-btn", "modaltest.hide()"]]},
+			"modaltest"
+		);
+	</script>
+
 	</body>
 </html>
-
